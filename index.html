@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Ritmo y Coordinación</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-area">
+        <div id="top-interface">
+            <div id="stats-container">
+                <div class="stat-item"><span id="score-correct">0</span></div>
+                <div class="stat-item"><span id="score-wrong">0</span></div>
+            </div>
+            
+            <div id="timer-container">
+                <div id="timer-bar"></div>
+            </div>
+        </div>
+
+        <div id="blocks-container"></div>
+
+        <div id="bottom-bars-container">
+            <div class="bottom-bar bar-red">J</div>
+            <div class="bottom-bar bar-blue">K</div>
+            <div class="bottom-bar bar-yellow">L</div>
+        </div>
+
+        <div id="modal-gameover">
+            <h1>GAME OVER</h1>
+            <p id="final-stats"></p>
+            <button id="btn-restart">Reintentar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
