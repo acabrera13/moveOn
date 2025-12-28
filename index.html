@@ -3,24 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juego de Ritmo y Coordinación</title>
+    <title>MoveOn - Rhythm Game</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div id="game-area">
+       <div id="start-menu">
+            <h1 class="game-title">Move On!</h1>
+            <p class="select-text">SELECCIONE DIFICULTAD</p>
+            
+            <div class="difficulty-buttons">
+                <button class="btn-difficulty btn-normal" onclick="setDifficulty('normal')">NORMAL</button>
+                <button class="btn-difficulty btn-dificil" onclick="setDifficulty('dificil')">DIFÍCIL</button>
+            </div>
+
+            <div class="game-instructions">
+                <p><strong>¿CÓMO JUGAR?</strong></p>
+                <p>1. Usa <strong>J, K, L</strong> para elegir el carril del bloque.</p>
+                <p>2. Presiona <strong>W, A, S, D</strong> según la flecha del bloque.</p>
+                <p class="inst-highlight">¡Presiona ambas teclas al mismo tiempo!</p>
+            </div>
+        </div>
+
         <div id="top-interface">
             <div id="stats-container">
-                <div class="stat-item"><span id="score-correct">0</span></div>
-                <div class="stat-item"><span id="score-wrong">0</span></div>
+                <div id="score-correct" class="stat-item">0</div>
+                <div id="score-wrong" class="stat-item">0</div>
             </div>
             
-            <div id="timer-container">
-                <div id="timer-bar"></div>
+            <div id="timer-wrapper">
+                <div id="timer-container">
+                    <div id="timer-bar"></div>
+                    <div id="timer-text">0s</div>
+                </div>
+                <button id="btn-surrender" title="Rendirse">
+                    <span class="emoji-icon">✋</span>
+                </button>
             </div>
         </div>
 
         <div id="blocks-container"></div>
+
+        <div id="final-countdown" style="display: none;"></div>
 
         <div id="bottom-bars-container">
             <div class="bottom-bar bar-red">J</div>
@@ -29,9 +54,12 @@
         </div>
 
         <div id="modal-gameover">
-            <h1>GAME OVER</h1>
-            <p id="final-stats"></p>
-            <button id="btn-restart">Reintentar</button>
+            <h1>ESTADO</h1>
+            <div id="final-stats"></div>
+            <div class="modal-buttons">
+                <button id="btn-next-level" style="display: none;">SIGUIENTE NIVEL</button>
+                <button id="btn-restart">VOLVER AL MENÚ</button>
+            </div>
         </div>
     </div>
 
